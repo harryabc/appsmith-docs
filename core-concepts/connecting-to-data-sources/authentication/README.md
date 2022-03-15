@@ -13,5 +13,4 @@ If your APIs are protected by an authentication mechanism, that requires a stand
 
 ## Security
 
-Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../../setup/), and audit it to ensure none of your data leaves your VPC.
-
+Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](broken-reference), and audit it to ensure none of your data leaves your VPC.

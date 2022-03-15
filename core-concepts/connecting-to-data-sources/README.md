@@ -10,12 +10,12 @@ Before connecting to a data source, you must whitelist the IP address of the App
 
 **18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 
-This is a guide on how to [whitelist appsmith on AWS.](../../how-to-guides/aws-whitelist.md)
+This is a guide on how to [whitelist appsmith on AWS.](broken-reference)
 {% endhint %}
 
 ## Security
 
-Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the execution of Queries. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../setup/), and audit it to ensure none of your data leaves your VPC. Read more about [Security](../../security.md)
+Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the execution of Queries. Since Appsmith is an open-source framework, you can [deploy it on-premise](broken-reference), and audit it to ensure none of your data leaves your VPC. Read more about [Security](broken-reference)
 
 ## Sample Data
 
@@ -30,7 +30,7 @@ You can connect to 2 sample datasets
 
 The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
 
-![](../../.gitbook/assets/add-mock-db%20%283%29.gif)
+![](<../../.gitbook/assets/add-mock-db (3).gif>)
 
 ### Sample API
 
@@ -51,4 +51,3 @@ curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
     "status" : "Approved"
 }'
 ```
-
