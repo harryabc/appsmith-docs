@@ -1,10 +1,10 @@
 # Table of contents
 
 * [教程](README.md)
-  * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
-    * [Connecting to Data Source and Binding Queries](tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries.md)
-    * [Building UI and Accessing Widget Properties](tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties.md)
-    * [Creating Interactive Views, Using Lists and Charts](tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts.md)
+  * [数据面板](tutorials/review-moderator-dashboard/README.md)
+    * [连接到数据源和绑定查询](tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries.md)
+    * [构建UI和访问组件属性](tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties.md)
+    * [创建交互式视图，使用列表和图表](tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts.md)
   * [Building a Store Catalog Manager](tutorials/building-a-store-catalog-manager/README.md)
     * [Building a Simple UI](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view.md)
     * [Using forms](tutorials/building-a-store-catalog-manager/part-2-using-forms.md)

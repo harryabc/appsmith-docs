@@ -1,117 +1,115 @@
 ---
-description: Part One of Review Moderator Tutorial
+description: 第一部分
 ---
 
-# Connecting to Data Source and Binding Queries
+# 连接到数据源和绑定查询
 
-### **Connecting to Postgres Mock DB**
+### **连接到 Postgres 数据库**
 
-Appsmith supports various data sources and lets you write queries on them to perform different actions from the application. In this tutorial, you'll connect to a Postgres data source that has the following tables:
+我们支持各种数据源，并允许您在这些数据源上编写查询，以从应用程序执行不同的操作。在本教程中，您将连接到具有以下表的 Postgres 数据源：
 
-1. **Business Table**: This contains detailed information about a few businesses that were filtered from the Yelp Data.
-2. **Review Table**: This table has reviews associated with the businesses listed in the business table.
+1. **Business Table**: 这包含了从Yelp数据中筛选出来的一些企业的详细信息。
+2. **Review Table**: 此表包含与业务表中列出的业务相关联的评论。
 
-Now, let's utilise this mock data source to fetch all the businesses items for the Review Moderator app by following the below steps:
+现在，让我们使用这个模拟数据源，按照以下步骤为应用程序获取所有数据：
 
-1. First, click on the `+` icon next to the `Datasources`.
-2. Next, you’ll see a list of datasource options that you can connect to.
-3. Choose Postgres and rename the data source to `Postgres Mock DB`.
-4. Next, use the following details to connect with the data source.
+1. 首先，单击`数据源`旁边的`+`图标。
+2. 接下来，您将看到可以连接到的数据源选项的列表。
+3. 选择Postgres并将数据源重命名为`Postgres Mock DB`。
+4. 接下来，使用以下信息连接数据源。
 
-```text
+```
 Connection Mode: Read / Write
-Host Address: ec2-52-5-1-20.compute-1.amazonaws.com
+Host Address: mockdb.internal.appsmith.com
 Port: 5432
-Database Name: d5ckn16780s3fo
-User: rotnyypwviosem
-Password: 5a07d165235aa9d0980ee8189c73fcfcef39f76872890a19e314b3d553698d63
+Database Name: yelp
+User: yelp
+Password: that-annoying-yelper
 ```
 
-To verify if this data source is valid or not, you can click on the `Test` button on your mid-bottom right. You should see a pop-up with the connection status.
+要验证此数据源是否有效，您可以单击右下角的`测试`按钮。您应该会看到一个显示连接状态的弹出窗口。
 
-Below is the GIF showing how you can connect to the data source:
+下面是显示如何连接到数据源的GIF：
 
-![Connecting to a Datasource on Appsmith](https://lh6.googleusercontent.com/wrgdx_gBWDc3vMr6GrrC90ELXuNTTvPrBlcNpXlemvf3uWJ50KTbbaj3IqgsrP0F1-UHK9RwSVyLJOp0icGxOuJA84Mr--3VowK-zMzuBkNr9E9ECjzYkaN5FFkyhxXCVbhmMtb-)
+![Connecting to a Datasource on Appsmith](https://lh6.googleusercontent.com/wrgdx\_gBWDc3vMr6GrrC90ELXuNTTvPrBlcNpXlemvf3uWJ50KTbbaj3IqgsrP0F1-UHK9RwSVyLJOp0icGxOuJA84Mr--3VowK-zMzuBkNr9E9ECjzYkaN5FFkyhxXCVbhmMtb-)
 
-![Testing the Datasource on Appsmith](https://lh3.googleusercontent.com/6dd0e0oudKxsfS5yFuj4pBlDI0RUSBRj1V5KxBTeZYScZ_GRyV4cR7SZ_nb7MbbjW2mfRi_Yq973wDdVLPGyzXEdpk9vh2wk61eVpjo9hJolbLCl60Xbr14F5oO8xHKxVvO6totY)
+![Testing the Datasource on Appsmith](https://lh3.googleusercontent.com/6dd0e0oudKxsfS5yFuj4pBlDI0RUSBRj1V5KxBTeZYScZ\_GRyV4cR7SZ\_nb7MbbjW2mfRi\_Yq973wDdVLPGyzXEdpk9vh2wk61eVpjo9hJolbLCl60Xbr14F5oO8xHKxVvO6totY)
 
-### **Writing your First Query**
+### 编写第一个查询
 
-The data source is successfully connected; now, let’s write a simple DB query to fetch all the business from the business table. Follow the below steps to do so:
+数据源连接成功；现在，让我们编写一个简单的数据库查询来从业务表中获取所有业务。
 
-1. First, click on the `+` icon next to the `Datasources`.
-2. Find the created `Postgres Mock DB` datasource under the Active tab and click `NEW QUERY`.
-3. This will create a new DB Query that you can use across the Page.
-4. Name this query as `getBusinessData` and click select.
-5. Use the following query in the query pane to get all the business data:
+请按照以下步骤进行操作：
+
+1. 首先，单击`数据源`旁边的`+`图标。
+2. 在选项卡下找到已创建的`Postgres Mock DB`数据源，然后单击新建查询。
+3. 这将创建一个新的数据库查询，您可以在整个页面中使用它。
+4. 将该查询命名为`getBusinessData`，然后单击Select。
+5. 在查询输入框中使用以下查询语句获取数据：
 
 ```sql
 select * from yelp_business;
 ```
 
-* To run this query, click on the `RUN` button on the top-right corner of the DB query.
+* 要运行此查询，请单击右上角的`运行`按钮。
 
-Just like that, we should see the response from the DB Query in the Response Pane below.
+就像这样，我们可以在下面的响应窗口中看到来自数据库查询的响应。
 
-Below is a GIF showing the same:
+如下图：
 
-![Running Queries on Appsmith](https://lh4.googleusercontent.com/gzno-n4ukb9e8UqPaVxomkelkZO3ktVn23bvnvTPPGJ2UJxxkRdVwRt4teyn7TYeJBXBetrvs1G41ElAKtjcEASTgVOPg1IYlTc0NT0Zb3xRUnVjZZ1rNKcT6Y3ZB_yeQVeP-g-4)
+![Running Queries on Appsmith](https://lh4.googleusercontent.com/gzno-n4ukb9e8UqPaVxomkelkZO3ktVn23bvnvTPPGJ2UJxxkRdVwRt4teyn7TYeJBXBetrvs1G41ElAKtjcEASTgVOPg1IYlTc0NT0Zb3xRUnVjZZ1rNKcT6Y3ZB\_yeQVeP-g-4)
 
-Let’s bind this data onto the powerful table widget of Appsmith!
+让我们将这些数据绑定到强大的`表格`组件。
 
-### Binding Queries onto Widgets
+### 将查询绑定到组件
 
-In the previous section, you’ve created a DB query named `getBusinessData`; let’s bind the query onto a table widget by following the below steps:
+在上一节中，您已经创建了一个名为`getBusinessData`的数据库查询。让我们按照以下步骤将查询绑定到`表格`组件上：
 
-1. Click on the `+` icon next to the `Widgets` from entity explorer.
-2. You’ll find a great set of UI widgets here that you can use to build the application
-3. Drag and drop a Table widget onto the canvas.
+1. 单击资源管理器中`组件`旁边的`+`图标。
+2. 您将在这里找到一组很棒的UI组件，您可以使用它们来构建应用程序。
+3. 将`表格`拖放到画布上。
 
-Now, you’ll find a new floating window as soon as you drop the table onto the canvas; you can call it the Widget property pane. Here, you can find all the configurations of the table and customisation properties. Here’s a screenshot of the table widget and its property pane:
+现在，只要将`表格`组件放到画布上，您就会发现一个新的浮动窗口。您可以将其称为组件属性窗口。在这里，您可以找到表格和自定义属性的所有配置。下面是表格组件及其属性窗口的屏幕截图：
 
-![Appsmith Table Widget and Property Pane](https://lh6.googleusercontent.com/n_uOOPk4lVhZ8W_a6KEIRMOsRHLbG2DNbsM0kS0zH9rbFNfCzvA8B2Qfg8_SeIXqYVy81e18OQw_Pz6N5wgF-gjPssUioYDpMU4QVaW_NDZ3eQjR9JVMqOX9Hgi3N4HfnLHUjxIg)
+![Appsmith Table Widget and Property Pane](https://lh6.googleusercontent.com/n\_uOOPk4lVhZ8W\_a6KEIRMOsRHLbG2DNbsM0kS0zH9rbFNfCzvA8B2Qfg8\_SeIXqYVy81e18OQw\_Pz6N5wgF-gjPssUioYDpMU4QVaW\_NDZ3eQjR9JVMqOX9Hgi3N4HfnLHUjxIg)
 
-Now let’s look at the Table’s Property Pane:
+现在，让我们看一下表格的属性：
 
-**Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. To learn more about the table widget, go through the detailed documentation [here](https://docs.appsmith.com/widget-reference/table).
+**数据**: 要向表格中添加数据，我们可以更新属性窗口的`数据`属性。默认情况下，它有一些初始配置；您可以根据自己的喜好进行更新。但还要确保它只接受数组数据类型。
 
-**Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click on the cog icon and set the column data type individually.
+**数据列**: 在`数据列`属性下，您可以配置所有列数据。您可以单击齿轮图标并单独设置列数据类型。
 
-These are the two fundamental properties that are needed for the table widget. However, many other properties allow you to add different actions and customise UI.
+这是表格组件所需的两个基本属性。但是，许多其他属性允许您添加不同的操作和自定义UI。
 
-Now, in the `Table Data` property, let’s bind the response from the DB Query. To do this, you’ll have to use the Moustache Operator.
+现在，在表数据属性中，让我们绑定来自数据库查询的响应。为此，您必须使用`大括号`操作符。
 
 {% hint style="success" %}
-In Appsmith, the moustache operator `{{ /* This is JavaScript */ }}` can be used anywhere to write JavaScript. For example, when binding data onto widget’s, sending params to APIs, sharing data across pages and many more.
+在这里中，你可以在任何地方使用`大括号`操作符`{{ /* This is JavaScript */ }}`来编写JavaScript。例如，将数据绑定到组件上，将参数发送到API，跨页面共享数据等等。
 {% endhint %}
 
-Now copy the following onto the `Table Data` property:
+现在将以下内容复制到表格的数据属性中：
 
 ```javascript
 {{ getBusinessData.data  }}
 ```
 
-When you copy this onto the Table Data, you should see the data magically populated onto the Table. Then, based on your preference, you can customise the column names and style your table widget with the other properties. Below is the screenshot of the Table data:
+当您将其复制到表数据时，您应该会看到数据神奇地填充到表中。然后，根据您的偏好，您可以自定义列名称，并使用其他属性设置表格组件的样式。下面是表格的截图：
 
-![](https://lh6.googleusercontent.com/-6nc-MyTFtR61saffFNb4sTAOj_XJn81A_alkq3ofkLmBhlHTmOp1yjmMWQzrjM1rbtfIkO_KzHgVypRtiSb6ppoOs7PLtnW5AKD2-qLrm7macsddznbYRPkv30OuysQ9gvzcgJp)
+![](https://lh6.googleusercontent.com/-6nc-MyTFtR61saffFNb4sTAOj\_XJn81A\_alkq3ofkLmBhlHTmOp1yjmMWQzrjM1rbtfIkO\_KzHgVypRtiSb6ppoOs7PLtnW5AKD2-qLrm7macsddznbYRPkv30OuysQ9gvzcgJp)
 
-But what just happened here?
+但这里刚刚发生了什么？
 
-Here, we are accessing the entire query object using the query name `getBusinessData`, and the `.data`property allows us to attach data.
+在这里，我们使用查询名称`getBusinessData`访问整个查询对象，并且`.data`允许我们附加数据。
 
-Setting Table Data to `{{ getBusinessData.data }}` also ensures that whenever `Busines Page` loads, `getBusinessData` runs automatically. You can, although, change this default behaviour by toggling the field "Run query on page load" on the Setting tab of `getBusinessData`.
+将表格的数据设置为`{{ getBusinessData.data }}`还可以确保无论何时加载页面，`getBusinessData`都会自动运行。但是，您可以通过切换`getBusinessData`的设置选项卡上的`页面加载完成后执行`字段来更改此默认行为。
 
-### Variables and Names
+### 变量和名称
 
-In the previous sections, we've used names to access widgets and queries. For example, you accessed a query's result by accessing a property on the query's name. In that sense, think of widgets, APIs and DB Query in Appsmith as variables having a name. Similar to variables in other programming languages:
+在前面的部分中，我们使用了名称来访问组件和查询。例如，您通过访问查询名称的属性来访问查询的结果。从这个意义上说，可以将组件、API和数据库查询视为具有名称的变量。类似于其他编程语言中的变量：
 
-1. They represent an object, be it a widget, an API object, or a query object
-2. They support a set of methods
-3. They have a scope; they can be accessed from only within their parent page
-4. All names within a page must be unique, including widget names, query names, or API names.
+1. 它们代表一个对象，无论是组件、API 对象还是查询对象
+2. 它们支持一组方法
+3. 他们有一个范围； 它们只能从其父页面中访问
+4. 页面中的所有名称都必须是唯一的，包括组件名称、查询名称或API名称。
 
-As you'll see in the next section, the inverse of this is also possible, and a query can also access i.e. a widget’s state. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names.
-
-  
-
-
+正如您将在下一节中看到的，与此相反的情况也是可能的，查询也可以访问组件的状态。此外，页面的所有构建块（组件、数据库查询和API）都可以使用其名称访问彼此的数据和/或状态。

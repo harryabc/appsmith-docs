@@ -1,52 +1,34 @@
-# Review Moderator Dashboard
+# 数据面板
 
-In this tutorial, you’ll learn to build a feature-complete internal tool on top of a real business dataset using Appsmith. The application is a multi-page dashboard that lets you browse through all the business information and moderate individual reviews provided by users.
+学习使用本平台在真实的业务数据集上构建功能完整的内部应用程序。该应用程序是一个数据面板，可让您浏览所有业务信息，并审核用户提供的个人评论。
 
 {% hint style="info" %}
-**TUTORIAL INFORMATION**
+教程信息
 
-⭐ **Level**: Beginner  
-⏱️ **Time**: ~20 minutes  
-🙌 **Goals**: 
+⭐ 等级: 初学者\
+⏱️ 时长 小于二十分钟\
+🙌 目标:
 
-* Connecting to Data Sources on Appsmith \(APIs/DB Queries\)
-* Binding Data onto different UI Widgets
-* Writing JS on Appsmith for Complex Views
-* Deploy and Manage your Applications
+* 连接到数据源
+* 将数据绑定到不同的组件上
+* 尝试编写JS代码
+* 部署应用
 {% endhint %}
-
-The tutorial is organized into three parts & we recommend you to follow them in order. Now before getting started, let’s set up Appsmith. You could either choose to use the self-hosted version using Docker or Appsmith cloud and follow along. 
-
-{% hint style="warning" %}
-Note: To set up Appsmith locally using Docker, you can follow the instructions provided [here](https://docs.appsmith.com/setup/docker).
-{% endhint %}
-
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This has an auto-generated organization called `<Your first-name>` apps \(referred to as your personal organization from now on\). However, you can create multiple organisations and organise your apps based on your preferences.
-
-In this tutorial, you'll create our Review Moderator application under the same organization. To do this, follow the below steps:
-
-1. Click on the `Create New` under your organisation.
-2. This will redirect to the configuration page of the newly created app.
-3. Note that the app is created with the default name **Untitled Application 1**.
-4. Rename it to `Review Moderator` ****by double-clicking on the existing one.
 
 {% hint style="success" %}
-Tip: On Appsmith, you can rename organisation names, widget names, query names and many more by double-clicking on the existing one.
+小提示: 您可以通过双击现有名称来重命名组件名称和查询名称等。
 {% endhint %}
 
-![Creating and Renaming Appsmith Application](https://lh3.googleusercontent.com/uTBER5l7d5mpWZ_PlFZMfnezoyS2B7mS3eQE91SuxhQKAE1zngWSlXQZIBtKV536Hr3lHM0j7E9ohmDOFq4EIILhrndO178PFeGgw0zplCEiXewAzrQQO5Lyt4NpZMAdlI0TngaW)
+第一次进入低代码平台，将在左侧自动生成资源管理器。下面是屏幕截图。
 
-The new app comes with auto-generated directories that establish an Appsmith app. Below is a screenshot of the entity explorer.
+![](../../.gitbook/assets/image.png)
 
-![](https://lh3.googleusercontent.com/mIIYBrTl38OXm9gDaOQIlG-7PsCJBhBcmJmg3iJPheczmdCb_4sFZarfG_zhLko-9A1tqGfj5X4huj3Hx6uixGYRBXlKr-nCA-VD44CbY0l6uI_-evHvQ4udOe7N9uAFRjUZuL2h)
+> 资源管理器是您可以创建和管理UI组件和数据源的地方。此外，您还可以在这些部分下找到您可以使用的不同集成。
 
-> Entity Explorer is a place where you can create and organise UI widgets and data sources. Additionally, you can also find different integrations that you can utilise under these sections.
+现在，让我们将页面从`Page1`重命名为`Business Detail`吧。您可以通过双击现有名称来执行此操作。
 
-Now, let’s rename the page from `Page1` to `Business Details`; you can do this by double-clicking on the existing name.
+太棒了！接下来，让我们进入下一部分，在这里您将连接到一个数据源，并编写您的第一个数据库查询！
 
-Awesome, you have now have set up the application. Next, let’s jump into the first part, here you’ll connect to a data source and write your first DB Query on Appsmith!
-
-{% page-ref page="connecting-to-data-source-and-binding-queries.md" %}
-
-
-
+{% content-ref url="connecting-to-data-source-and-binding-queries.md" %}
+[connecting-to-data-source-and-binding-queries.md](connecting-to-data-source-and-binding-queries.md)
+{% endcontent-ref %}

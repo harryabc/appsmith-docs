@@ -4,9 +4,9 @@ description: 本教程将使您在本低代码平台上构建一个简单的应�
 
 # 教程
 
-### 教程 1: 仪表盘
+### 教程 1: 数据面板
 
-Learn to build a feature-complete internal application on top of a real business dataset using Appsmith. The application is a multi-page dashboard that lets you browse through all the business information and moderate individual reviews provided by users.
+学习使用本平台在真实的业务数据集上构建功能完整的内部应用程序。该应用程序是一个数据面板，可让您浏览所有业务信息，并审核用户提供的个人评论。
 
 {% content-ref url="tutorials/review-moderator-dashboard/" %}
 [review-moderator-dashboard](tutorials/review-moderator-dashboard/)
